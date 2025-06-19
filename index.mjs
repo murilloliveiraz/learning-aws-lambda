@@ -9,8 +9,8 @@ export const handler = async (event) => {
   let Key;
   if(event.Records[0]){
     record = event.Records[0];
-    bucket = event.s3.bucket.name;
-    bucket = event.s3.object.key;
+    Bucket = event.s3.bucket.name;
+    Key = event.s3.object.key;
   }
 
   const getObjectResult = await s3Client.getObject({
